@@ -1,0 +1,6 @@
+{
+  "name": "Rescue AI Productivity Partner",
+  "description": "An active AI productivity companion that dynamically schedules tasks, predicts deadline risk, generates micro-steps, and prevents procrastination.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

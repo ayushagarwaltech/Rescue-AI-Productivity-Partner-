@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-glass-bg: rgba(255, 255, 255, 0.7);
+  --color-glass-border: rgba(0, 0, 0, 0.06);
+  --color-glass-highlight: rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Base resets & animations */
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Pulse Glows & Glowing accents */
+.glow-primary {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+}
+.glow-danger {
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.25);
+  animation: pulse-danger 2s infinite alternate;
+}
+.glow-warning {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.15);
+}
+.glow-success {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
+}
+
+@keyframes pulse-danger {
+  0% {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.45);
+  }
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.glass-panel-heavy {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.glass-input {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  color: #0f172a;
+  transition: all 0.2s ease-in-out;
+}
+.glass-input:focus {
+  background: rgba(0, 0, 0, 0.01);
+  border-color: rgba(59, 130, 246, 0.5);
+  outline: none;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+/* Pulsing Dots */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  animation: pulse-dot-key 1.5s infinite;
+}
+
+@keyframes pulse-dot-key {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+}
+
+/* Markdown Rendering */
+.markdown-body {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+.markdown-body p {
+  margin-bottom: 0.5rem;
+}
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+.markdown-body strong {
+  font-weight: 700;
+  color: inherit;
+}
+.markdown-body ul, .markdown-body ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+}
+.markdown-body ul {
+  list-style-type: disc;
+}
+.markdown-body ol {
+  list-style-type: decimal;
+}
+.markdown-body li {
+  margin-bottom: 0.25rem;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+  font-weight: 700;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
